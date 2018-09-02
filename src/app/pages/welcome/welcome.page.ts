@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
-import { TabsPage } from '../../tabs/tabs.page';
+//import { TabsPage } from '../../tabs/tabs.page';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,7 +17,7 @@ export class WelcomePage implements OnInit {
   ngOnInit() {
     this.userService.getData().subscribe(data => {
       console.log(data)
-      this.router.navigate(['/tabs']);
+      //this.router.navigate(['/tabs']);
     });
   }
 
