@@ -5,37 +5,40 @@ import { TabsPage } from './tabs.page';
 import { HomePage } from '../home/home.page';
 import { AboutPage } from '../about/about.page';
 import { ContactPage } from '../contact/contact.page';
+import { LimsPage } from '../pages/lims/lims.page';
+import { CrmPage } from '../pages/crm/crm.page';
+import { SurveyPage } from '../pages/survey/survey.page';
 
 const routes: Routes = [
   {
     path: 'tabs',
     component: TabsPage,
     children: [
-      {
+      /* {
         path: '',
         redirectTo: '/tabs/(home:home)',
         pathMatch: 'full',
+      }, */
+      {
+        path: 'lims',
+        outlet: 'lims',
+        component: LimsPage
       },
       {
-        path: 'home',
-        outlet: 'home',
-        component: HomePage
+        path: 'crm',
+        outlet: 'crm',
+        component: CrmPage
       },
       {
-        path: 'about',
-        outlet: 'about',
-        component: AboutPage
-      },
-      {
-        path: 'contact',
-        outlet: 'contact',
-        component: ContactPage
+        path: 'survey',
+        outlet: 'survey',
+        component: SurveyPage
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/(home:home)',
+    redirectTo: '/tabs/(lims:lims)',
     pathMatch: 'full'
   }
 ];
