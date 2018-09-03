@@ -11,7 +11,7 @@ import { SurveyPage } from '../pages/survey/survey.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       /* {
@@ -37,7 +37,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: '',
+    path: 'tabs',
     redirectTo: '/tabs/(lims:lims)',
     pathMatch: 'full'
   }

@@ -1,9 +1,25 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Welcome</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content padding>
+<ion-content padding id="login">
+  <div align="center">
+    <img src="assets/imgs/vizzdat_logo.PNG" class="logo" />
+  </div>
+  <form [formGroup]="loginForm" (submit)="login(loginForm.value)">
+    <ion-item>
+      <ion-label color="primary" class="font-form-label" fixed>Username</ion-label>
+      <ion-input type="text" formControlName="username" required
+          placeholder="Enter your username" class="x" 
+          onfocus="this.placeholder = ''"
+          onblur="this.placeholder = 'Enter your username'" class="font-form-input">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" class="font-form-label" fixed>Password</ion-label>
+      <ion-input type="text" formControlName="password" required
+          placeholder="Enter your password" 
+          onfocus="this.placeholder = ''"
+          onblur="this.placeholder = 'Enter your password'" class="font-form-input" style="-webkit-text-security:disc">
+      </ion-input>
+    </ion-item>
+    <ion-button expand="block" [disabled]="!loginForm.valid" color="primary-bam" type="submit" class="submit-btn">Log in</ion-button>
+  </form>
 
 </ion-content>
