@@ -11,18 +11,13 @@ import { SurveyPage } from '../pages/survey/survey.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'tabs',
     component: TabsPage,
     children: [
-      /* {
-        path: '',
-        redirectTo: '/tabs/(home:home)',
-        pathMatch: 'full',
-      }, */
       {
         path: 'lims',
         outlet: 'lims',
-        component: LimsPage
+        component: LimsPage,
       },
       {
         path: 'crm',
@@ -37,10 +32,10 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'tabs',
-    redirectTo: '/tabs/(lims:lims)',
+    path: '',
+    redirectTo: '/welcome',
     pathMatch: 'full'
-  }
+  } 
 ];
 
 @NgModule({

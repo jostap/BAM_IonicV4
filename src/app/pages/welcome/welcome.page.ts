@@ -4,7 +4,7 @@ import { Validators, FormBuilder, FormControl, FormGroup } from '@angular/forms'
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
 import { User } from './../../shared/user';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-welcome',
@@ -25,6 +25,7 @@ export class WelcomePage implements OnInit {
     public formBuilder: FormBuilder,
     public storage: Storage,
     private alertCtrl: AlertController,
+    public navCtrl: NavController,
     public router: Router) { }
 
   ngOnInit() {
@@ -47,11 +48,15 @@ export class WelcomePage implements OnInit {
   }
 
   goToTabs() {
-    this.router.navigate(['/tabs']);
+    //this.router.navigate(['/tabs']);
+    //this.navCtrl.goRoot('/home');
+    //this.navCtrl.navigateRoot('/x');
+    //this.navCtrl.navigateRoot('/home');
+    this.navCtrl.navigateForward('tabs/(lims:lims)');
   }
 
   login(value){
-    this.goToTabs(); // TO DELETE after test
+    //this.goToTabs(); // TO DELETE after test
     let username = value.username;
     let password = value.password;
 
